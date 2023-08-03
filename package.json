@@ -11,7 +11,10 @@
     "url": "https://github.com/Ryan-Dia/eslint-hijacking.git"
   },
   "keywords": [
-    "eslint"
+    "eslint",
+    "eslintconfig",
+    "hijacking",
+    "styleguide"
   ],
   "author": "ryan-dia",
   "license": "MIT",
