@@ -1,0 +1,40 @@
+{
+  "name": "eslint-config-hijacking-ts",
+  "version": "0.1.0",
+  "description": "eslint-config-hijacking-ts",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./rules/styles": "./rules/styles.js",
+    "./rules/types": "./rules/types.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ryan-Dia/eslint-hijacking"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "hijacking",
+    "typescript",
+    "styleguide"
+  ],
+  "bugs": {
+    "url": "https://github.com/Ryan-Dia/eslint-hijacking/issues"
+  },
+  "homepage": "https://github.com/Ryan-Dia/eslint-hijacking",
+  "author": "ryan-dia",
+  "license": "MIT",
+  "dependencies": {
+    "eslint-config-hijacking-js": "^0.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1"
+  }
+}
