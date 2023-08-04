@@ -1,12 +1,12 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   extends: [
     'eslint-config-hijacking-js',
     'plugin:@typescript-eslint/recommended',
     './rules/style',
     './rules/types',
   ].map(require.resolve),
-  plugins: ['@typescript-eslint'],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: true,
   },
