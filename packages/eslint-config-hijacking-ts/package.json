@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-hijacking-ts",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "eslint-config-hijacking-ts",
   "main": "index.js",
   "exports": {
