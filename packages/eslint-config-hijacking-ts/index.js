@@ -2,7 +2,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   extends: ['plugin:@typescript-eslint/recommended'].concat(
-    ['eslint-config-hijacking-js', './rules/style', './rules/types'].map(require.resolve)
+    ['eslint-config-hijacking-js', './rules/styles', './rules/types'].map(require.resolve)
   ),
   parserOptions: {
     project: true,
