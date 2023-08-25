@@ -7,6 +7,17 @@ module.exports = {
   parserOptions: {
     project: true,
   },
+
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.mjs', '.js', '.json', '.ts', '.mts'],
+      },
+    },
+    'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.mts', '.tsx'],
+    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
+  },
+
   rules: {
     // for performance Troubleshooting
     // TypeScript provides the same checks
@@ -17,5 +28,18 @@ module.exports = {
 
     // Already applied in TSLint.
     'no-unused-vars': 'off',
+
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        mjs: 'never',
+        jsx: 'never',
+        ts: 'never',
+        mts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
 };
