@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-hijacking-ts",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "eslint-config-hijacking-ts",
   "main": "index.js",
   "exports": {
@@ -33,7 +33,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
-    "eslint-config-hijacking-js": "^0.1.0",
+    "eslint-config-hijacking-js": "^0.3.0",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
