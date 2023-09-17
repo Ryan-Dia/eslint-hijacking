@@ -79,5 +79,55 @@ module.exports = {
     // Disallow else after a return in an if
     // https://eslint.org/docs/rules/no-else-return
     'no-else-return': ['error', { allowElseIf: false }],
+
+    // Disallow use of eval()
+    // 신뢰할 수 없는 코드에 사용하면 eval()프로그램이 여러 가지 주입 공격에 노출될 수 있습니다.
+    // https://eslint.org/docs/rules/no-eval
+    'no-eval': 'error',
+
+    // Disallow adding to native types
+    // https://eslint.org/docs/rules/no-extend-native
+    'no-extend-native': 'error',
+
+    // Disallow unnecessary function binding
+    // https://eslint.org/docs/rules/no-extra-bind
+    'no-extra-bind': 'error',
+
+    // Disallow Unnecessary Labels
+    // https://eslint.org/docs/rules/no-extra-label
+    'no-extra-label': 'error',
+
+    // Disallow fallthrough of case statements
+    // https://eslint.org/docs/rules/no-fallthrough
+    'no-fallthrough': 'error',
+
+    // Disallow the use of leading or trailing decimal points in numeric literals
+    // https://eslint.org/docs/rules/no-floating-decimal
+    'no-floating-decimal': 'error',
+
+    // Disallow reassignments of native objects or read-only globals
+    // The "extends": "eslint:recommended" property in a configuration file enables this rule
+    // https://eslint.org/docs/rules/no-global-assign
+    'no-global-assign': ['error', { exceptions: [] }],
+
+    // Disallow implicit type conversions
+    // https://eslint.org/docs/rules/no-implicit-coercion
+    'no-implicit-coercion': [
+      'off',
+      {
+        boolean: false,
+        number: true,
+        string: true,
+        allow: [],
+      },
+    ],
+
+    // Disallow var and named functions in global scope
+    // https://eslint.org/docs/rules/no-implicit-globals
+    'no-implicit-globals': 'off',
+
+    // Disallow use of eval()-like methods
+    // https://eslint.org/docs/rules/no-implied-eval
+    'no-implied-eval': 'error',
   },
 };
