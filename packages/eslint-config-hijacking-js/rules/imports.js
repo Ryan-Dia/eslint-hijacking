@@ -16,7 +16,10 @@ module.exports = {
     },
     'import/extensions': ['.js', '.mjs', '.jsx'],
     'import/core-modules': [],
-    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
+    'import/ignore': [
+      'node_modules',
+      '\\.(coffee|scss|css|less|hbs|svg|json)$',
+    ],
   },
 
   rules: {
@@ -129,7 +132,10 @@ module.exports = {
     // ensure absolute imports are above relative imports and that unassigned imports are ignored
     // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
     // TODO: enforce a stricter convention in module import order?
-    'import/order': ['error', { groups: [['builtin', 'external', 'internal']] }],
+    'import/order': [
+      'error',
+      { groups: [['builtin', 'external', 'internal']] },
+    ],
 
     // Require a newline after the last import/require in a group
     // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
