@@ -129,5 +129,46 @@ module.exports = {
     // Disallow use of eval()-like methods
     // https://eslint.org/docs/rules/no-implied-eval
     'no-implied-eval': 'error',
+
+    // Disallow usage of __iterator__ property
+    // https://eslint.org/docs/rules/no-iterator
+    'no-iterator': 'error',
+
+    // Disallow use of labels for anything other than loops and switches
+    // https://eslint.org/docs/rules/no-labels
+    'no-labels': ['error', { allowLoop: false, allowSwitch: false }],
+
+    // Disallow unnecessary nested blocks
+    // https://eslint.org/docs/rules/no-lone-blocks
+    'no-lone-blocks': 'error',
+
+    // Disallow creation of functions within loops
+    // https://eslint.org/docs/rules/no-loop-func
+    'no-loop-func': 'error',
+
+    // Disallow magic numbers
+    // https://eslint.org/docs/rules/no-magic-numbers
+    'no-magic-numbers': [
+      'off',
+      {
+        ignore: [],
+        ignoreArrayIndexes: true,
+        enforceConst: true,
+        detectObjects: false,
+      },
+    ],
+
+    // Disallow use of multiple spaces
+    // https://eslint.org/docs/rules/no-multi-spaces
+    'no-multi-spaces': [
+      'error',
+      {
+        ignoreEOLComments: false,
+      },
+    ],
+
+    // Disallow use of multiline strings
+    // https://eslint.org/docs/rules/no-multi-str
+    'no-multi-str': 'error',
   },
 };
