@@ -126,18 +126,6 @@ module.exports = {
     // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
     'import/no-namespace': 'off',
 
-    // Ensure consistent use of file extension within the import path
-    // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/extensions.md
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        mjs: 'never',
-        jsx: 'never',
-      },
-    ],
-
     // ensure absolute imports are above relative imports and that unassigned imports are ignored
     // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
     // TODO: enforce a stricter convention in module import order?
