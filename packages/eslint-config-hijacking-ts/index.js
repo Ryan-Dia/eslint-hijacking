@@ -2,7 +2,9 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   extends: ['plugin:@typescript-eslint/recommended'].concat(
-    ['eslint-config-hijacking-js', './rules/styles', './rules/types'].map(require.resolve)
+    ['eslint-config-hijacking-js', './rules/styles', './rules/types'].map(
+      require.resolve,
+    ),
   ),
   parserOptions: {
     project: true,
@@ -15,7 +17,10 @@ module.exports = {
       },
     },
     'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.mts', '.tsx'],
-    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
+    'import/ignore': [
+      'node_modules',
+      '\\.(coffee|scss|css|less|hbs|svg|json)$',
+    ],
   },
 
   rules: {
