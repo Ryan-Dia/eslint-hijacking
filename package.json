@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "format": "prettier --cache --write",
+    "format": "prettier --write",
     "format:check": "prettier --check .",
     "lint": "eslint . --fix",
     "lint:check": "eslint ."
@@ -44,9 +44,12 @@
     "prettier": "^3.0.3"
   },
   "lint-staged": {
-    "*.js": [
+    "**/*.js": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --max-warnings=0 --fix"
+    ],
+    "**/*.md": [
+      "prettier --write"
     ]
   }
 }
