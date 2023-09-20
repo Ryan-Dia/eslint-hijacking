@@ -170,5 +170,130 @@ module.exports = {
     // Disallow use of multiline strings
     // https://eslint.org/docs/rules/no-multi-str
     'no-multi-str': 'error',
+
+    // Disallow use of new operator when not part of the assignment or comparison
+    // https://eslint.org/docs/rules/no-new
+    'no-new': 'error',
+
+    // Disallow use of new operator for Function object
+    // https://eslint.org/docs/rules/no-new-func
+    'no-new-func': 'error',
+
+    // Disallows creating new instances of String, Number, and Boolean
+    // https://eslint.org/docs/rules/no-new-wrappers
+    'no-new-wrappers': 'error',
+
+    // Disallow \8 and \9 escape sequences in string literals
+    // The "extends": "eslint:recommended" property in a configuration file enables this rule
+    // https://eslint.org/docs/rules/no-nonoctal-decimal-escape
+    'no-nonoctal-decimal-escape': 'error',
+
+    // Disallow use of (old style) octal literals
+    // The "extends": "eslint:recommended" property in a configuration file enables this rule
+    // https://eslint.org/docs/rules/no-octal
+    'no-octal': 'error',
+
+    // Disallow use of octal escape sequences in string literals, such as
+    // var foo = 'Copyright \251';
+    // https://eslint.org/docs/rules/no-octal-escape
+    'no-octal-escape': 'error',
+
+    // Disallow usage of __proto__ property
+    // https://eslint.org/docs/rules/no-proto
+    'no-proto': 'error',
+
+    // Disallow declaring the same variable more than once
+    // The "extends": "eslint:recommended" property in a configuration file enables this rule
+    // https://eslint.org/docs/rules/no-redeclare
+    'no-redeclare': 'error',
+
+    // disallow certain object properties
+    // https://eslint.org/docs/rules/no-restricted-properties
+    'no-restricted-properties': [
+      'error',
+      {
+        object: 'arguments',
+        property: 'callee',
+        message: 'arguments.callee is deprecated',
+      },
+      {
+        object: 'global',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'self',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'window',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'global',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'self',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'window',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        property: '__defineGetter__',
+        message: 'Please use Object.defineProperty instead.',
+      },
+      {
+        property: '__defineSetter__',
+        message: 'Please use Object.defineProperty instead.',
+      },
+      {
+        object: 'Math',
+        property: 'pow',
+        message: 'Use the exponentiation operator (**) instead.',
+      },
+    ],
+
+    // Disallow use of assignment in return statement
+    // return문에서 =, += 사용불가
+    // https://eslint.org/docs/rules/no-return-assign
+    'no-return-assign': ['error', 'always'],
+
+    // Disallow use of `javascript:` urls.
+    // https://eslint.org/docs/rules/no-script-url
+    'no-script-url': 'error',
+
+    // TODO: 교체가능성
+    // Disallow reassignment of function parameters
+    // Disallow parameter object manipulation except for specific exclusions
+    // Reference : https://github.com/airbnb/javascript/issues/719#issuecomment-297978077
+    // Reference : https://github.com/airbnb/javascript#functions--mutate-params
+    // rule: https://eslint.org/docs/rules/no-param-reassign.html
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: [
+          'acc', // for reduce accumulators
+          'accumulator', // for reduce accumulators
+          'e', // for e.returnvalue
+          'ctx', // for Koa routing
+          'context', // for Koa routing
+          'req', // for Express requests
+          'request', // for Express requests
+          'res', // for Express responses
+          'response', // for Express responses
+          '$scope', // for Angular 1 scopes
+          'staticContext', // for ReactRouter context
+        ],
+      },
+    ],
   },
 };
