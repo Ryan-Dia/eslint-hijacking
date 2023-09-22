@@ -590,7 +590,10 @@
 - [6.8](#functions--mutate-params) 절대로 매개변수를 바꾸지 마세요.
 
   - [`no-param-reassing`](https://eslint.org/docs/latest/rules/no-param-reassign.html)
-    > why? 매개변수로 전달된 객체를 조작하면 원래 호출처에서 원치 않는 사이드 이펙트를 일으킬 수 있습니다.
+
+  <br>
+
+  > why? 매개변수로 전달된 객체를 조작하면 원래 호출처에서 원치 않는 사이드 이펙트를 일으킬 수 있습니다.
 
   ```js
   // bad
