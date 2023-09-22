@@ -332,7 +332,9 @@
 
 <a name="destructuring--object"></a><a name="4.1"></a>
 
-- [4.1](#destructuring--object) 하나의 객체에서 여러 속성에 접근할 때는 객체 비구조화를 사용하세요. - [`prefer-destructuring`](https://eslint.org/docs/latest/rules/prefer-destructuring)
+- [4.1](#destructuring--object) 하나의 객체에서 여러 속성에 접근할 때는 객체 비구조화를 사용하세요.
+
+  - [`prefer-destructuring`](https://eslint.org/docs/latest/rules/prefer-destructuring)
 
   <br>
 
