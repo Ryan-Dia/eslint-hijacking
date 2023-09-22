@@ -270,6 +270,15 @@ module.exports = {
     // https://eslint.org/docs/rules/no-script-url
     'no-script-url': 'error',
 
+    // Disallow unnecessary string escaping
+    // The "extends": "eslint:recommended" property in a configuration file enables this rule
+    // https://eslint.org/docs/rules/no-useless-escape
+    'no-useless-escape': 'error',
+
+    // Require immediate function invocation to be wrapped in parentheses
+    // https://eslint.org/docs/rules/wrap-iife.html
+    'wrap-iife': ['error', 'outside', { functionPrototypeMethods: false }],
+
     // TODO: 교체가능성
     // Disallow reassignment of function parameters
     // Disallow parameter object manipulation except for specific exclusions
