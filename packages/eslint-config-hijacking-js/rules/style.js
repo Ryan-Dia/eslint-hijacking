@@ -40,5 +40,44 @@ module.exports = {
     // Disallow shorthand type conversions
     // https://eslint.org/docs/latest/rules/no-implicit-coercion#rule-details
     'no-implicit-coercion': 'error',
+
+    // Disallow use of the Object constructor
+    // https://eslint.org/docs/latest/rules/no-new-object
+    'no-new-object': 'error',
+
+    // Require quotes around object literal property names
+    // https://eslint.org/docs/rules/quote-props.html
+    'quote-props': [
+      'error',
+      'as-needed',
+      { keywords: false, unnecessary: true, numbers: true },
+    ],
+
+    // Prefer use of an object spread over Object.assign
+    // https://eslint.org/docs/rules/prefer-object-spread
+    'prefer-object-spread': 'error',
+
+    // Disallow use of the Array constructor
+    // https://eslint.org/docs/latest/rules/no-array-constructor
+    'no-array-constructor': 'error',
+
+    // Require or disallow space before function opening parenthesis
+    // https://eslint.org/docs/rules/space-before-function-paren
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
+
+    // Require line breaks inside function parentheses if there are line breaks between parameters
+    // https://eslint.org/docs/rules/function-paren-newline
+    'function-paren-newline': ['error', 'multiline-arguments'],
+
+    // Enforce the location of arrow function bodies with implicit returns
+    // https://eslint.org/docs/rules/implicit-arrow-linebreak
+    'implicit-arrow-linebreak': ['error', 'beside'],
   },
 };
