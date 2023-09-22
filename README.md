@@ -10,6 +10,7 @@
 
   - [`prefer-const`](https://eslint.org/docs/latest/rules/prefer-const.html)
   - [`no-const-assign`](https://eslint.org/docs/latest/rules/no-const-assign.html)
+
     <br>
 
   > why? 참조를 재할당 할 수 없게 함으로써, 이해하기 어려운 동시에 버그로 이어지는 코드를 방지합니다.
@@ -29,6 +30,7 @@
 - [1.2](#references--disallow-var) 만약 참조를 재할당 해야 한다면 `var` 대신 `let`을 사용하세요.
 
   - [`no-var`](https://eslint.org/docs/latest/rules/no-var.html)
+
     <br>
 
   > why? `var`처럼 함수스코프를 취하는 것 보다는 블록스코프를 취하는 `let`이 더 낫습니다.
@@ -68,6 +70,7 @@
 - [2.1](#objects--no-new) 객체를 생성할 때는 리터럴 문법을 사용하세요.
 
   - [`no-new-object`](https://eslint.org/docs/latest/rules/no-new-object)
+
     <br>
 
   ```js
@@ -109,6 +112,7 @@
 - [2.3](#es6-object-shorthand) 메소드의 단축구문을 사용하세요.
 
   - [`object-shorthand`](https://eslint.org/docs/latest/rules/object-shorthand)
+
     <br>
 
   ```js
@@ -136,6 +140,7 @@
 - [2.4](#es6-object-concise) 속성의 단축구문을 사용하세요.
 
   - [`object-shorthand`](https://eslint.org/docs/latest/rules/object-shorthand)
+
     <br>
 
   > why? 더 짧고 설명적입니다.
@@ -159,6 +164,7 @@
 - [2.5](#objects--quoted-props) 유효하지 않은 식별자에만 따옴표 속성을 사용하세요.
 
   - [`quote-props`](https://eslint.org/docs/latest/rules/quote-props)
+
     <br>
 
   > why? 더 읽기 쉽습니다. 이렇게 하면 구문 하이라이팅이 잘 되고, 많은 자바스크립트 엔진이 더 쉽게 최적화 할 수 있습니다.
@@ -204,6 +210,7 @@
 - [2.6](#objects--rest-spread) 객체에 대해 얕은 복사를 할 때는 [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)대신 객체 전개 구문을 사용하세요. 특정 속성이 생략된 새로운 개체를 가져올 때는 객체 나머지 연산자(object rest operator)를 사용하세요.
 
   - [`prefer-object-spread`](https://eslint.org/docs/latest/rules/prefer-object-spread)
+
     <br>
 
   ```js
@@ -230,6 +237,7 @@
 - [3.1](#arrays--literals) 배열을 생성할 때 리터럴 구문을 사용하세요.
 
   - [`no-array-constructor`](https://eslint.org/docs/latest/rules/no-array-constructor.html)
+
     <br>
 
   > why? Array 생성자를 사용하면 몇 가지 문제가 발생할 수 있습니다.  
@@ -247,6 +255,7 @@
 <a name="arrays--mapping"></a><a name="3.2"></a>
 
 - [3.2](#arrays--mapping) 매핑할 때는 전개 구문 `...` 대신 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)을 사용하세요. 중간 배열 생성을 방지와 [성능](https://github.com/airbnb/javascript/issues/1084#issuecomment-248144612) 상의 문제가 있기 때문입니다.
+
   <br>
 
   ```js
@@ -262,6 +271,7 @@
 - [3.3](#arrays--callback-return) 배열 메소드 콜백에는 리턴 구문을 사용하세요.
 
   - [`array-callback-return`](https://eslint.org/docs/latest/rules/array-callback-return)
+
     <br>
 
   > why? 종종 리턴 구문을 넣어야하는 데 실수로 넣지 않을 때가 있습니다. 만약 반환을 사용하고 싶지 않거나 반환된 결과가 필요하지 않은 경우에는 `forEach`사용을 고려하세요.
@@ -323,6 +333,7 @@
 <a name="destructuring--object"></a><a name="4.1"></a>
 
 - [4.1](#destructuring--object) 하나의 객체에서 여러 속성에 접근할 때는 객체 비구조화를 사용하세요. - [`prefer-destructuring`](https://eslint.org/docs/latest/rules/prefer-destructuring)
+
   <br>
 
       >why? 비구조화는 속성들을 위한 임시 참조를 만들지 않도록 해주고, 객체의 반복적인 접근을 방지합니다. 반복적인 객체 접근은 중복 코드와 실수를 만들어내고, 더 많은 코드를 읽게 합니다. 또한 객체 비구조화는 블록에서 사용되는 객체의 구조를 저으이하는 단일한 위치를 제공함으로써 어떤 것이 사용되는지 알아내기 위해 모든 블록을 읽지 않아도 되도록 해줍니다.
@@ -352,7 +363,8 @@
 
 - [4.2](#destructuring--array) 배열 비구조화를 사용하세요.
 
-  - [`prefer-destructuring`](https://eslint.org/docs/latest/rules/prefer-destructuring)  
+  - [`prefer-destructuring`](https://eslint.org/docs/latest/rules/prefer-destructuring)
+
     <br>
 
   ```javascript
@@ -374,6 +386,7 @@
 
   - [`prefer-template`](https://eslint.org/docs/latest/rules/prefer-template.html)
   - [`template-curly-spacing`](https://eslint.org/docs/latest/rules/template-curly-spacing)
+
     <br>
 
   > why? 템플릿 문자열은 덧붙이기와 줄바꿈을 제공하는 간결한 문법으로 가독성을 높여줍니다.
@@ -410,6 +423,7 @@
 - [5.3](#strings--escaping) 문자열에 불필요한 이스케이프 문자를 사용하지 마세요.
 
   - [`no-useless-escape`](https://eslint.org/docs/latest/rules/no-useless-escape)
+
     <br>
 
   > why? 백슬래시는 가독성을 해치기 때문에 필요할 때만 사용해야 합니다.
@@ -430,6 +444,7 @@
 - [6.1](#functions--iife) 즉시 호출 함수 표현식을 괄호로 감싸세요.
 
   - [`wrap-iife`](https://eslint.org/docs/latest/rules/wrap-iife.html)
+
     <br>
 
   > why? 즉시 호출 함수 표현식은 하나의 단위이며, 괄호로 이것을 감싸면 괄호 안의 표현을 명확하게 해주기 때문입니다. 모듈을 어디에서나 사용한다면 즉시 호출 표현식은 전혀 필요하지 않다는 점을 주의하세요.
@@ -447,6 +462,7 @@
 
   - [`no-loop-func`](https://eslint.org/docs/latest/rules/no-loop-func.html)
   - 참고 : ECMA-262 명세는 `블록`을 구문의 일종으로 정의하고 있지만 함수선언은 구문이 아닙니다.
+
     <br>
 
   ```js
@@ -469,6 +485,7 @@
 <a name="functions--arguments-shadow"></a><a name="6.3"></a>
 
 - [6.3](#functions--arguments-shadow) 절대 매개변수 이름을 `arguments`라고 짓지 마세요. 이것은 함수 스코프에 전해지는 `arguments` 객체의 참조를 덮어써 버립니다.
+
   <br>
 
   ```js
@@ -488,6 +505,7 @@
 - [6.4](#es6-rest) 절대 `arguments`를 사용하지마세요. 대신 나머지 문법(rest syntax) `...`를 사용하세요.
 
   - [`prefer-rest-params`](https://eslint.org/docs/latest/rules/prefer-rest-params)
+
     <br>
 
   > why? `...`을 사용하면 몇 개의 매개변수를 이용하고 싶은지 확실히 할 수 있습니다. 더 나아가, 나머지 인자(rest arguments)는 `arguments`와 같은 Array-like 객체가 아닌 진짜 Array입니다.
@@ -510,6 +528,7 @@
 - [6.5](#functions--defaults-last) 기본 매개변수는 항상 뒤쪽에 두세요.
 
   - [`default-param-last`](https://eslint.org/docs/latest/rules/default-param-last)
+
     <br>
 
   ```js
@@ -529,6 +548,7 @@
 - [6.6](#functions--constructor) 절대로 새로운 함수를 만들기 위해 함수 생성자를 사용하지 마세요.
 
   - [`no-new-func`](https://eslint.org/docs/latest/rules/no-new-func)
+
     <br>
 
   > why? 이러한 방법으로 문자열을 평가해 함수를 만드는 것은 `eval()`과 같은 수준읜 취약점을 만듭니다.
@@ -547,6 +567,7 @@
 
   - [`space-before-function-paren`](https://eslint.org/docs/latest/rules/space-before-function-paren)
   - [`space-before-blocks`](https://eslint.org/docs/latest/rules/space-before-blocks)
+
     <br>
 
   > why? 일관성을 갖는 것이 좋습니다. 그리고 이렇게 하면 이름을 추가하거나 지울 때 공백을 건드릴 필요가 없게 됩니다.
@@ -603,6 +624,7 @@
 - [6.9](#functions--reassign-params) 절대로 매개변수를 재할당하지 마세요.
 
   - [`no-param-reassign`](https://eslint.org/docs/latest/rules/no-param-reassign.html)
+
     <br>
 
   > why? 매개변수를 재할당하는 것은 예측할 수 없는 결과를 불러 일으킵니다. 특히 `arguments` 객체에 접근할 때 말이죠. 또한 V8에서 최적화 문제를 일으킬 수도 있습니다.
@@ -636,7 +658,8 @@
 
 - [6.10](#functions--spread-vs-apply) 가변 인자 함수를 호출할 때는 전개 구문 `...`을 사용하세요.
 
-  - [`prefer-spread`](https://eslint.org/docs/latest/rules/prefer-spread)  
+  - [`prefer-spread`](https://eslint.org/docs/latest/rules/prefer-spread)
+
     <br>
 
   > why? 훨씬 더 깔끔합니다. 컨텍스트를 제공할 필요도 없고, `apply`로 `new`를 쉽게 구성할 수도 없습니다.
@@ -663,6 +686,7 @@
   여러 줄의 시그니처 또는 호출을 취하는 함수는 이 가이드에 있는 다른 것들처럼 들여쓰기가 되어야 합니다. 한줄에 각 항목을 하나씩 두고, 마지막 항목에 쉼표를 넣습니다.
 
   - [`function-paren-newline`](https://eslint.org/docs/latest/rules/function-paren-newline)
+
     <br>
 
   ```js
@@ -691,6 +715,7 @@
 
   - [`prefer-arrow-callback`](https://eslint.org/docs/latest/rules/prefer-arrow-callback.html)
   - [`arrow-spacing`](https://eslint.org/docs/latest/rules/arrow-spacing.html)
+
     <br>
 
   > why? 화살표 함수는 그 컨텍스트의 `this`에서 실행하는 버전의 함수를 만들기 때문입니다. 이것은 보통 원하는대로 작동하고, 보다 간결합니다.
@@ -715,6 +740,7 @@
 
   - [`arrow-parens`](https://eslint.org/docs/latest/rules/arrow-parens.html)
   - [`arrow-body-style`](https://eslint.org/docs/latest/rules/arrow-body-style.html)
+
     <br>
 
   > why? Syntactic sugar이기 때문입니다. 여러 함수가 연결된 경우 읽기 쉬워집니다.
@@ -764,6 +790,7 @@
 - [7.3](#arrows--one-arg-parens) 명확성과 일관성을 위해 항상 인자를 괄호로 감싸세요.
 
   - [`arrow-parens`](https://eslint.org/docs/latest/rules/arrow-parens.html)
+
     <br>
 
   > why? 인자를 추가하거나 제거할 때 변경 사항을 최소화할 수 있습니다.
@@ -805,6 +832,7 @@
 - [7.4](#arrows--confusing) 화살표 함수 구문(`=>`)과 비교 연산자(`<=`, `>=`)를 헷갈리게 하지 마세요.
 
   - [`no-confusing-arrow`](https://eslint.org/docs/latest/rules/no-confusing-arrow)
+
     <br>
 
   ```js
@@ -832,6 +860,7 @@
 - [7.5](#whitespace--implicit-arrow-linebreak) 암시적 반환을 하는 화살표 함수 몸체의 위치를 적절히 설정하세요.
 
   - [`implicit-arrow-linebreak`](https://eslint.org/docs/latest/rules/implicit-arrow-linebreak)
+
     <br>
 
   ```js
