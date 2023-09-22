@@ -49,19 +49,19 @@
   }
   ```
 
-  <a name="references--block-scope"></a><a name="1.3"></a>
+<a name="references--block-scope"></a><a name="1.3"></a>
 
-  - [1.3](#references--block-scope) `let` 과 `const` 는 둘 다 블록스코프라는 것을 유의하세요.
+- [1.3](#references--block-scope) `let` 과 `const` 는 둘 다 블록스코프라는 것을 유의하세요.
 
-    ```js
-    // const와 let은 선언된 블록 안에서만 존재합니다.
-    {
-      let a = 1;
-      const b = 1;
-    }
-    console.log(a); // ReferenceError
-    console.log(b); // ReferenceError
-    ```
+  ```js
+  // const와 let은 선언된 블록 안에서만 존재합니다.
+  {
+    let a = 1;
+    const b = 1;
+  }
+  console.log(a); // ReferenceError
+  console.log(b); // ReferenceError
+  ```
 
 ## 객체 (Object)
 
