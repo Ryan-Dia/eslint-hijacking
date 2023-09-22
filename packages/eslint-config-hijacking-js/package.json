@@ -6,6 +6,7 @@
   "exports": {
     ".": "./index.js",
     "./rules/best-practices": "./rules/best-practices.js",
+    "./rules/es6": "./rules/es6.js",
     "./rules/style": "./rules/style.js",
     "./rules/imports": "./rules/imports.js",
     "./rules/variables": "./rules/variables.js",
