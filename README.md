@@ -791,3 +791,245 @@
        bar
     )
     ```
+
+## 클래스 & 생성자 (Classes & Constructors)
+
+<a name="constructors--no-useless"></a><a name="8.1"></a>
+  - [8.1](#constructors--no-useless) 클래스는 생성자가 명시되지 않은 경우 기본 생성자를 갖습니다. 빈 생성자 함수나 부모 클래스로 위임하는 함수는 불필요합니다.
+    - [`no-useless-constructor`](https://eslint.org/docs/rules/no-useless-constructor)
+   
+      <br>
+
+    ```javascript
+    // bad
+    class Jedi {
+      constructor() {}
+
+      getName() {
+        return this.name;
+      }
+    }
+
+    class Rey extends Jedi {
+      constructor(...args) {
+        super(...args);
+      }
+    }
+
+    // good
+    class A { }
+
+    class A {
+        constructor () {
+            doSomething();
+        }
+    }
+    
+    class B extends A {
+        constructor() {
+            super('foo');
+        }
+    }
+    
+    class B extends A {
+        constructor() {
+            super();
+            doSomething();
+        }
+    }
+    ```
+
+<a name="classes--no-duplicate-members"></a><a name="8.2"></a>
+  - [8.2](#classes--no-duplicate-members) 중복되는 클래스 멤버를 만들지 마세요.
+    - [`no-dupe-class-members`](https://eslint.org/docs/latest/rules/no-dupe-class-members)
+    
+    <br>
+
+    >why? 중복된 클래스 멤버를 선언하면 암묵적으로 마지막 멤버가 적용됩니다. 중복은 확실히 버그입니다.
+    ```js
+    // bad
+    class Foo {
+      bar() { return 1; }
+      bar() { return 2; }
+    }
+    
+    // good
+    class Foo {
+      bar() { return 1; }
+    }
+    
+    // good
+    class Foo {
+      bar() { return 2; }
+    }
+    ```
+    
+<a name="classes--methods-use-this"></a><a name="8.3"></a>
+  - [8.3](#classes--methods-use-this) 클래스 메소드는 외부 라이브러리나 프레임워크가 구체적으로 비정적 메소드를 요구하지 않는 이상 `this`를 사용하거나 해당 메소드를 정적 메소드로 만들어야 합니다. 인스턴스 메서드는 수신자의 속성에 따라 다르게 동작함을 나타내야 합니다.
+    - [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)
+
+    <br>
+
+    ```js
+    // bad
+    class Foo {
+      bar() {
+        console.log('bar');
+      }
+    }
+    
+    // good - this를 사용했습니다
+    class Foo {
+      bar() {
+        console.log(this.bar);
+      }
+    }
+    
+    // good - constructor가 면제됩니다
+    class Foo {
+      constructor() {
+        // ...
+      }
+    }
+    
+    // good - 정적 메소드는 this를 사용하지 않는다고 예상할 수 있습니다
+    class Foo {
+      static bar() {
+        console.log('bar');
+      }
+    }
+    ```
+
+## 모듈 (Modules)
+
+<a name="modules--no-duplicate-imports"></a><a name="9.1"></a>
+  - [9.1](#modules--no-duplicate-imports) 같은 경로는 한 곳에서 import하세요.
+    - [`import/no-duplicates`](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-duplicates.md)
+    
+    <br>
+    
+    >why?  같은 경로에서 import하는 여러 줄의 코드는 유지보수를 어렵게 만듭니다.
+    ```js
+    // bad
+    import foo from 'foo';
+    // … 또 다른 imports … //
+    import { named1, named2 } from 'foo';
+    
+    // good
+    import foo, { named1, named2 } from 'foo';
+    
+    // good
+    import foo, {
+      named1,
+      named2,
+    } from 'foo';
+    ```
+
+<a name="modules--no-mutable-exports"></a><a name="9.2"></a>
+  - [9.2](#modules--no-mutable-exports) 가변 바인딩을 export하지 마세요.
+    - [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
+    
+    <br>
+
+    >why? 변조는 일반적으로 피해야 하지만, 가변 바인딩을 export할 때는 특히 그렇습니다. 이 기술이 어떤 특별한 상황에 필요할 수도 있지만, 일반적으로는 상수 참조만 export되어야 합니다.
+    ```js
+    // bad
+    let foo = 3;
+    export { foo };
+    
+    // good
+    const foo = 3;
+    export { foo };
+    ```
+
+<a name="modules--prefer-default-export"></a><a name="9.3"></a>
+  - [9.3](#modules--prefer-default-export) 한가지만 export하는 모듈에서는 이름 붙여진 export보다는 default export를 사용하세요.
+    - [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
+    
+    <br>
+
+    >why? 하나만 export하는 파일의 가독성과 유지보수성이 더 좋기 때문입니다.
+    ```js
+    // bad
+    export function foo() {}
+    
+    // good
+    export default function foo() {}
+    ```
+
+<a name="modules--imports-first"></a><a name="9.4"></a>
+  - [9.4](#modules--imports-first) 모든 `import`구문을 다른 구문들 위에 두세요.
+    - [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
+   
+    <br>
+
+    >why? `import`구문은 호이스트되기 때문에 이것을 가장 위에 두면 예상치 못한 결과를 막을 수 있습니다.
+    ```js
+    // bad
+    import foo from 'foo';
+    foo.init();
+    
+    import bar from 'bar';
+    
+    // good
+    import foo from 'foo';
+    import bar from 'bar';
+    
+    foo.init();
+    ```
+
+<a name="modules--multiline-imports-over-newlines"></a><a name="9.5"></a>
+  - [9.5](#modules--multiline-imports-over-newlines) 여러 줄에 걸친 import는 여러 줄의 배열이나 객체 리터럴처럼 들여쓰기하세요.
+    - [`object-curly-newline`](https://eslint.org/docs/rules/object-curly-newline)
+
+    <br>
+
+    >why? 스타일 가이드에 있는 다른 모든 중괄호 블록들 처럼 중괄호는 같은 들여쓰기 규칙을 따릅니다. 콤마가 그렇듯이 말이죠.
+    ```js
+    // bad
+    import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
+    
+    // good
+    import {
+      longNameA,
+      longNameB,
+      longNameC,
+      longNameD,
+      longNameE,
+    } from 'path';
+    ```
+
+<a name="modules--no-webpack-loader-syntax"></a><a name="9.6"></a>
+  - [9.6](#modules--no-webpack-loader-syntax) 모듈 import 구문에서 Webpack loader 구문을 사용하지 마세요.
+    - [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
+    
+    <br>
+
+    >why?  import에서 Webpack 구문을 사용하면 이 코드가 모듈 번들러에 연결되기 때문입니다. loader 구문은 `webpack.config.js`에서 사용하세요.
+    ```js
+    // bad
+    import fooSass from 'css!sass!foo.scss';
+    import barCss from 'style!css!bar.css';
+    
+    // good
+    import fooSass from 'foo.scss';
+    import barCss from 'bar.css';
+    ```
+
+ <a name="modules--import-extensions"></a><a name="9.7"></a>
+  - [9.7](#modules--import-extensions) 자바스크립트 파일 확장자를 명시하세요.
+    - [`import/extensions`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md)
+    
+    <br>
+
+    >why? [Node.js에 관해 후회하는 10가지-Ryan Dahl](https://youtu.be/M3BM9TB-8yA?t=837)   
+    >https://github.com/airbnb/javascript/issues/2469#issuecomment-978841036 
+    ```js
+    import foo from './foo.js';
+
+    import bar from './bar.json';
+    
+    import Component from './Component.jsx';
+    
+    import express from 'express/index.js';
+    ```
