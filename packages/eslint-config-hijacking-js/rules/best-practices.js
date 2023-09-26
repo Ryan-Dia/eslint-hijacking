@@ -10,6 +10,15 @@ module.exports = {
     // Reference : https://github.com/eslint/eslint/issues/4808#issuecomment-167795140
     complexity: ['off', 15],
 
+    // Enforce that class methods use "this"
+    // https://eslint.org/docs/rules/class-methods-use-this
+    'class-methods-use-this': [
+      'error',
+      {
+        exceptMethods: [],
+      },
+    ],
+
     // Require return statements to either always or never specify values
     // 함수가 항상 값을 return 하거나 아예 값을 return 하지 않도록 함
     // 즉 경우에따라 'true'  or 'undefined'이 되지 않도록 함
