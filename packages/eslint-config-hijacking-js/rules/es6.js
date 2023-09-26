@@ -88,5 +88,18 @@ module.exports = {
         allowParens: true,
       },
     ],
+
+    // Disallow unnecessary constructor
+    // https://eslint.org/docs/rules/no-useless-constructor
+    'no-useless-constructor': 'error',
+
+    // Disallow duplicate class members
+    // The "extends": "eslint:recommended" property in a configuration file enables this rule
+    // https://eslint.org/docs/rules/no-dupe-class-members
+    'no-dupe-class-members': 'error',
+
+    // Enforce the spacing around the * in generator functions
+    // https://eslint.org/docs/rules/generator-star-spacing
+    'generator-star-spacing': ['error', { before: false, after: true }],
   },
 };
